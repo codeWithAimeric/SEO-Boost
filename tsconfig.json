@@ -103,6 +103,13 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "next": ["node_modules/next"],
+      "react": ["node_modules/react"],
+      "react-dom": ["node_modules/react-dom"]
+    }                          
   }
 }
