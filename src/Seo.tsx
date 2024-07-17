@@ -1,24 +1,16 @@
 import React from 'react';
-import Head from 'next/head';
-import { generateMetaTags } from './meta';
+import { Helmet } from 'react-helmet';
 
-interface SeoProps {
-  title: string;
-  description: string;
-  keywords: string[];
-}
-
-const Seo: React.FC<SeoProps> = ({ title, description, keywords }) => {
-  const metaTags = generateMetaTags(title, description, keywords);
-
+const Seo = ({ title, description, keywords }) => {
   return (
-    <Head>
-      <title>{metaTags.title}</title>
-      {metaTags.meta.map((meta, index) => (
-        <meta key={index} name={meta.name} content={meta.content} />
-      ))}
-    </Head>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+      </Helmet>
   );
 };
 
 export default Seo;
+
+
