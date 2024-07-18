@@ -1,7 +1,14 @@
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 
-const Seo = ({ title, description, keywords, canonicalUrl }) => {
+interface SeoProps {
+    title: string,
+    description: string,
+    keywords: string,
+    canonicalUrl: string,
+}
+
+const Seo: React.FC<SeoProps> = ({ title, description, keywords, canonicalUrl }) => {
   return (
       <HelmetProvider>
         <title>{title}</title>
